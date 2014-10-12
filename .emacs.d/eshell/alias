@@ -1,0 +1,8 @@
+alias hdiff hg diff $*
+alias ll ls -al
+alias hlog hg log . -r 3
+alias hst hg status .
+alias hbr hg branch
+alias hbrs hg branches
+alias hman hg help $1
+alias hembh hg update REQ_46059_embh

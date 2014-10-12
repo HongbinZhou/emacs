@@ -1,0 +1,84 @@
+;;; ref to:  http://stackoverflow.com/questions/2079095/how-to-modularize-an-emacs-configuration
+
+(defconst my-init-dir "~/.emacs.d/lisp/") 
+
+(defun load-user-file (file)
+  (interactive "f")
+  "Load a file in current user's configuration directory"
+  (load-file (expand-file-name file my-init-dir)))
+
+(load-user-file "init.el")
+
+(load-user-file "autocomlete.el")
+(load-user-file "buffer.el")
+(load-user-file "dired.el")
+(load-user-file "my-face.el")
+(load-user-file "key.el")
+(load-user-file "lang-mode.el")
+(load-user-file "linum.el")
+(load-user-file "lisp.el")
+(load-user-file "org.el")
+;; (load-user-file "tex.el")
+(load-user-file "tramp.el")
+(load-user-file "term.el")
+(load-user-file "xsel.el")
+(load-user-file "my-shell.el")
+(load-user-file "macro.el")
+(load-user-file "my-rxvt.el")
+(load-user-file "my-tmux.el")
+(load-user-file "my-window.el")
+(load-user-file "my-haskell.el")
+(load-user-file "my-cmode.el")
+
+(if (eq window-system 'w32)
+    (progn
+      (load-user-file "my-win32.el"))  
+  nil
+  )
+
+
+
+
+;; (load-user-file "mutt.el")
+;; (load-user-file "timestamp.el")
+;; (load-user-file "sdcv.el")
+;; (load-user-file "verilog.el")
+;; (load-user-file "vhdl.el")
+;; (load-user-file "colortheme.el")
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(TeX-view-program-selection (quote (((output-dvi style-pstricks) "dvips and gv") (output-dvi "xdvi") (output-pdf "xpdf") (output-html "xdg-open"))))
+ '(ansi-color-faces-vector [default bold shadow italic underline bold bold-italic bold])
+ '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
+ '(column-number-mode t)
+ '(desktop-path (quote ("~")))
+ '(display-time-mode t)
+ '(icicle-command-abbrev-alist (quote ((rename-uniquely ru 1))))
+ '(org-file-apps (quote ((auto-mode . emacs) ("\\.mm\\'" . default) ("\\.x?html?\\'" . default) ("\\.pdf\\'" . "xpdf"))))
+ '(save-visited-files-location "~/.emacs-visited-files")
+ '(send-mail-function (quote smtpmail-send-it))
+ '(session-use-package t nil (session))
+ '(show-paren-mode t)
+ '(smtpmail-smtp-server "smtp.gmail.com")
+ '(smtpmail-smtp-service 25)
+ '(tool-bar-mode nil))
+
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(diff-added ((((background dark)) (:foreground "#FFFF9B9BFFFF")) (t (:foreground "DarkGreen"))))
+ '(diff-changed ((((background dark)) (:foreground "Yellow")) (t (:foreground "MediumBlue"))))
+ '(diff-context ((((background dark)) (:foreground "White")) (t (:foreground "Black"))))
+ '(diff-file-header ((((background dark)) (:foreground "Cyan" :background "Black")) (t (:foreground "Red" :background "White"))))
+ '(diff-header ((((background dark)) (:foreground "Cyan")) (t (:foreground "Red"))))
+ '(diff-hunk-header ((((background dark)) (:foreground "Black" :background "#05057F7F8D8D")) (t (:foreground "White" :background "Salmon"))))
+ '(diff-index ((((background dark)) (:foreground "Magenta")) (t (:foreground "Green"))))
+ '(diff-nonexistent ((((background dark)) (:foreground "#FFFFFFFF7474")) (t (:foreground "DarkBlue"))))
+ '(diff-removed ((((background dark)) (:foreground "#7474FFFF7474")) (t (:foreground "DarkMagenta"))))
+ '(org-mode-line-clock ((t (:foreground "red" :box (:line-width -1 :style released-button)))) t))
