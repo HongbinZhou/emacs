@@ -1,0 +1,4 @@
+#!/bin/sh
+ALTERNATE=""
+[[ $(uname -o) = "Cygwin" ]] && ALTERNATE=" "
+emacsclient -a "$ALTERNATE" -c -n "$@"
