@@ -29,6 +29,7 @@
 (load-user-file "my-window.el")
 (load-user-file "my-haskell.el")
 (load-user-file "my-cmode.el")
+(load-user-file "osx.el")
 
 (if (eq window-system 'w32)
     (progn

@@ -76,10 +76,25 @@
   '(progn (custom-add-load 'data 'session)
           (custom-add-load 'session 'session)))
 
-
-(tool-bar-mode -1)
-					;(menu-bar-mode nil)
-(set-scroll-bar-mode nil)
+(if (display-graphic-p)
+   ; only valid within X
+    (progn
+      (tool-bar-mode -1)
+      (add-to-list 'custom-theme-load-path "~/.emacs.d/emacs-color-theme-solarized/color-theme-solarized-20130515")
+      (load-theme 'solarized-dark t)
+      (set-scroll-bar-mode nil)
+      )
+  (progn
+					; no x
+					;(setq solarized-termcolors 16)
+					;(add-to-list 'color-theme-load-path "~/.emacs.d/color-theme-solarized")
+					;(load-theme 'solarized-dark t)
+					;(add-to-list 'custom-theme-load-path "~/.emacs.d/solarized-emacs")
+					;(add-to-list 'custom-theme-load-path "~/.emacs.d/emacs-color-theme-solarized/color-theme-solarized-20130515")
+    ;; (load-theme 'monokai t)
+    ;; (set-scroll-bar-mode `right)
+    )
+  )
 
 (put 'upcase-region 'disabled nil)
 
