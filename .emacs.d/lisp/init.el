@@ -80,8 +80,8 @@
    ; only valid within X
     (progn
       (tool-bar-mode -1)
-      (add-to-list 'custom-theme-load-path "~/.emacs.d/emacs-color-theme-solarized/color-theme-solarized-20130515")
-      (load-theme 'solarized-dark t)
+;      (add-to-list 'custom-theme-load-path "~/.emacs.d/emacs-color-theme-solarized/color-theme-solarized-20130515")
+;      (load-theme 'solarized-dark t)
       (set-scroll-bar-mode nil)
       )
   (progn

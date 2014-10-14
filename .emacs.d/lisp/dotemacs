@@ -29,15 +29,21 @@
 (load-user-file "my-window.el")
 (load-user-file "my-haskell.el")
 (load-user-file "my-cmode.el")
-(load-user-file "osx.el")
 
-(if (eq window-system 'w32)
-    (progn
-      (load-user-file "my-win32.el"))  
-  nil
-  )
-
-
+;; OS specific config files
+;; http://ergoemacs.org/emacs/elisp_determine_OS_version.html
+(cond
+ ((string-equal system-type "windows-nt") ; Microsoft Windows
+  (progn
+    (message "Microsoft Windows")
+    (load-user-file "my-win32.el")))
+ ((string-equal system-type "darwin")   ; Mac OS X
+  (progn
+    (message "Mac OS X")
+    (load-user-file "osx.el")))
+ ((string-equal system-type "gnu/linux") ; linux
+  (progn
+    (message "Linux"))))
 
 
 ;; (load-user-file "mutt.el")
