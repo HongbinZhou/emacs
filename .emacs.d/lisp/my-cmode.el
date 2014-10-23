@@ -36,8 +36,8 @@
   ;;; http://www.emacswiki.org/emacs/SmartTabs#Retab
   ;; (smart-tabs-insinuate 'c 'javascript)
   (whitespace-mode t)
-  (setq c-eldoc-includes "-Ie:\\workspace\\local\\vocvoc_embh\\ttssrc.a\\tts_main\\be\\embh\\inc")
-  (load "c-eldoc")
+  ;; (setq c-eldoc-includes "-Ie:\\workspace\\local\\vocvoc_embh\\ttssrc.a\\tts_main\\be\\embh\\inc")
+  ;; (load "c-eldoc")
   (eldoc-mode t)
   (line-number-mode t)
   (hs-minor-mode t)
