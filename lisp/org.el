@@ -1764,9 +1764,6 @@ Late deadlines first, then scheduled, then non-late deadlines"
 
 (setq org-link-mailto-program (quote (compose-mail "%a" "%s")))
 
-(add-to-list 'load-path (expand-file-name "~/.emacs.d"))
-
-
 ;; Bookmark handling
 ;;
 (global-set-key (kbd "<C-f6>") '(lambda () (interactive) (bookmark-set "SAVED")))

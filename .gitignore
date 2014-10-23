@@ -22,3 +22,4 @@ server
 tramp
 url
 yasnippet-snippets
+org-clock-save.el

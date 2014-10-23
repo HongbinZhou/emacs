@@ -107,7 +107,7 @@
   t)
 
 ; default C-c SPC is conflict with org table
-(define-key global-map (kbd "C-x SPC") 'ace-jump-mode)
+;; (define-key global-map (kbd "C-x SPC") 'ace-jump-mode)
 (autoload
   'ace-jump-mode-pop-mark
   "ace-jump-mode"
