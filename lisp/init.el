@@ -294,3 +294,13 @@
 
 ;;; projectile
 (projectile-global-mode)
+
+;;; fix c:/cygdrive/c/User/... path issues when use magit on windows
+;;; https://github.com/magit/magit/issues/1318
+(defadvice magit-expand-git-file-name
+  (before magit-expand-git-file-name-cygwin activate)
+  "Handle Cygwin directory names such as /cygdrive/c/*
+by changing them to C:/*"
+  (when (string-match "/cygdrive/\\([a-z]\\)/\\(.*\\)" filename)
+(setq filename (concat (match-string 1 filename) ":/"
+               (match-string 2 filename)))))
