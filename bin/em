@@ -1,4 +1,4 @@
 #!/bin/sh
 ALTERNATE=""
-[[ $(uname) = "Cygwin*" ]] && ALTERNATE=" "
+[[ $(uname -o) = "Cygwin" ]] && echo "I am in Cygwin..." && ALTERNATE=" "
 emacsclient -a "$ALTERNATE" -t "$@"

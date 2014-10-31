@@ -18,8 +18,8 @@
 (require 'package)
 (package-initialize)
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("melpa" . "http://melpa.milkbox.net/packages/")
+                         ("marmalade" . "https://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.org/packages/")
 			 ))
 
 (add-to-list 'package-archives '("elpa" . "http://tromey.com/elpa/"))
@@ -280,3 +280,17 @@
 ;; Available only on mercurial versions 1.9 or higher
 
 (setq monky-process-type 'cmdserver)
+
+;;; using re-builder to do replace
+;;; http://www.emacswiki.org/ReBuilder
+(defun hbzhou/reb-query-replace (to-string)
+  "Replace current RE from point with `query-replace-regexp'."
+  (interactive
+   (progn (barf-if-buffer-read-only)
+	  (list (query-replace-read-to (reb-target-binding reb-regexp)
+				       "Query replace"  t))))
+  (with-current-buffer reb-target-buffer
+    (query-replace-regexp (reb-target-binding reb-regexp) to-string)))
+
+;;; projectile
+(projectile-global-mode)
