@@ -38,7 +38,19 @@
 ;;;ido
 (global-set-key (kbd "C-x M-b") 'ido-switch-buffer)
 
-(helm-mode 1)
+;;; Do not turn helm-mode globally!
+;;; Otherwise, tab in shell mode will not work correctly
+;;; cd ~/nuan will become cd ~/"nuan/", strange!
+;; (helm-mode 1)
+
+;; Enable helm pcomplete
+;; ref: https://github.com/emacs-helm/helm/wiki
+(add-hook 'eshell-mode-hook
+	  #'(lambda ()
+	      (define-key eshell-mode-map
+		[remap eshell-pcomplete]
+		'helm-esh-pcomplete)))
+
 (setq enable-recursive-minibuffers t)
 ;; http://www.reddit.com/r/emacs/comments/1q6zx2/disable_helmfindfiles_path_autocompletion/
 (setq helm-ff-auto-update-initial-value nil)
