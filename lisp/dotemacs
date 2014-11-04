@@ -67,7 +67,7 @@
      (output-html "xdg-open"))))
  '(ansi-color-faces-vector
    [default bold shadow italic underline bold bold-italic bold])
- '(bmkp-last-as-first-bookmark-file "~\\.emacs.d\\bookmarks")
+ '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
  '(column-number-mode t)
  '(desktop-path (quote ("~")))
  '(display-time-mode t)
@@ -100,4 +100,5 @@
  '(diff-index ((((background dark)) (:foreground "Magenta")) (t (:foreground "Green"))) t)
  '(diff-nonexistent ((((background dark)) (:foreground "#FFFFFFFF7474")) (t (:foreground "DarkBlue"))) t)
  '(diff-removed ((((background dark)) (:foreground "#7474FFFF7474")) (t (:foreground "DarkMagenta"))) t)
+ '(helm-lisp-show-completion ((t (:background "seashell"))))
  '(org-mode-line-clock ((t (:foreground "red" :box (:line-width -1 :style released-button)))) t))
