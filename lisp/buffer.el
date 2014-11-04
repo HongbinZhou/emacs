@@ -39,6 +39,7 @@
 (global-set-key (kbd "C-x M-b") 'ido-switch-buffer)
 
 (helm-mode 1)
+(set-face-attribute 'helm-lisp-show-completion t :background "seashell")
 
 ;; Enable helm pcomplete
 ;; ref: https://github.com/emacs-helm/helm/wiki
