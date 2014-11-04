@@ -80,21 +80,10 @@
    ; only valid within X
     (progn
       (tool-bar-mode -1)
-;      (add-to-list 'custom-theme-load-path "~/.emacs.d/emacs-color-theme-solarized/color-theme-solarized-20130515")
-;      (load-theme 'solarized-dark t)
-      (set-scroll-bar-mode nil)
-      )
+      (set-scroll-bar-mode nil))
   (progn
 					; no x
-					;(setq solarized-termcolors 16)
-					;(add-to-list 'color-theme-load-path "~/.emacs.d/color-theme-solarized")
-					;(load-theme 'solarized-dark t)
-					;(add-to-list 'custom-theme-load-path "~/.emacs.d/solarized-emacs")
-					;(add-to-list 'custom-theme-load-path "~/.emacs.d/emacs-color-theme-solarized/color-theme-solarized-20130515")
-    ;; (load-theme 'monokai t)
-    ;; (set-scroll-bar-mode `right)
-    )
-  )
+    ))
 
 (put 'upcase-region 'disabled nil)
 
@@ -191,20 +180,8 @@
 
 ;; (require 'occur-default-current-word)
 
-;; ;;; helm
-;; (add-to-list 'load-path "~/.emacs.d/plugins/helm")
-;; (require 'helm-config)
-
-
 ;;; crontab-mode 
 (add-to-list 'auto-mode-alist '("cron\\(tab\\)?\\."    . crontab-mode))
-
-;;; Fri Apr 25 14:14:02 2014
-;;; Using powerline to replace smart-mode-line, 
-;; ;;; smart-mode-line
-;; (setq sml/theme 'dark)
-;; (require 'smart-mode-line)
-;; (sml/setup)
 
 ;;; https://github.com/capitaomorte/autopair
 (require 'autopair)
@@ -215,36 +192,18 @@
 (require 'yasnippet)
 (yas-global-mode 1)
 
-;; ;;; https://github.com/AndreaCrotti/yasnippet-snippets
-;; (add-to-list 'yas/root-directory "/home/hbzhou/.emacs.d/yasnippet-snippets")
-;; (yas/initialize)
-
 ;; PDFs visited in Org-mode are opened in Evince (and not in the default choice) http://stackoverflow.com/a/8836108/789593
 (add-hook 'org-mode-hook
 	  '(lambda ()
 	     (delete '("\\.pdf\\'" . default) org-file-apps)
 	     (add-to-list 'org-file-apps '("\\.pdf\\'" . "xpdf %s"))))
 
-;; ;;; discover-mode
-;; (require 'discover)
-;; (global-discover-mode 1)
-
 ;;; https://github.com/leoliu/easy-kill
 (global-set-key [remap kill-ring-save] 'easy-kill)
 (global-set-key [remap mark-sexp] 'easy-mark)
 
-;; (require 'sublimity)
-;; (require 'sublimity-scroll)
-;; (sublimity-mode 1)
-;; ;; (require 'sublimity-map)
-;; ;; (require 'sublimity-attractive)
-;; (setq sublimity-scroll-drift-length 1)
-;; (setq sublimity-scroll-weight 4)
-
-
 (require 'powerline)
 (powerline-default-theme)
-
 
 
 ;;; Thu May  8 14:02:33 2014    
@@ -261,7 +220,6 @@
 ;;;       jump window: M-p <a,b,c,d,...>
 (global-set-key (kbd "M-p") 'ace-window)
 (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
-
 
 
 ;;; ntcmd-mode
