@@ -38,10 +38,7 @@
 ;;;ido
 (global-set-key (kbd "C-x M-b") 'ido-switch-buffer)
 
-;;; Do not turn helm-mode globally!
-;;; Otherwise, tab in shell mode will not work correctly
-;;; cd ~/nuan will become cd ~/"nuan/", strange!
-;; (helm-mode 1)
+(helm-mode 1)
 
 ;; Enable helm pcomplete
 ;; ref: https://github.com/emacs-helm/helm/wiki
