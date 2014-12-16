@@ -69,6 +69,7 @@
  helm-gtags-pulse-at-cursor t
  helm-gtags-prefix-key "\C-cg"
  helm-gtags-suggested-key-mapping t
+ helm-gtags-path-style 'absolute
  )
 
 (require 'helm-gtags)
