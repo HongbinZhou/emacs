@@ -44,6 +44,13 @@
   (fold-dwim-org/minor-mode t)
   (add-to-list 'write-file-functions 'delete-trailing-whitespace))
 
+;;; ref: http://www.emacswiki.org/emacs/UntabifyUponSave
+;;; if indent-tabs-mode is off, untabify before saving
+(add-hook 'write-file-hooks 
+          (lambda () (if (not indent-tabs-mode)
+                         (untabify (point-min) (point-max)))
+                      nil ))
+
 (add-hook 'c-mode-common-hook
           'my-c-mode-common-hook)
 
@@ -81,7 +88,6 @@
 (add-hook 'asm-mode-hook 'helm-gtags-mode)
 
 (define-key helm-gtags-mode-map (kbd "C-c g a") 'helm-gtags-tags-in-this-function)
-(define-key helm-gtags-mode-map (kbd "C-j") 'helm-gtags-select)
 (define-key helm-gtags-mode-map (kbd "M-.") 'helm-gtags-dwim)
 (define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack)
 (define-key helm-gtags-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
