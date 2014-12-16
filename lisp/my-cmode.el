@@ -25,6 +25,20 @@
 (define-key cm-map "b" 'outline-backward-same-level)       ; Backward - same level
 (global-set-key "\M-o" cm-map)
 
+(defun indent-all ()
+    "Indent entire buffer."
+    (interactive)
+    (save-excursion
+	(indent-region (point-min) (point-max) nil)))
+
+(defun untabify-all ()
+    "untabify entire buffer"
+    (interactive)
+    (save-excursion
+	(if (not indent-tabs-mode)
+		(untabify (point-min) (point-max)))
+	nil))
+
 (defun my-c-mode-common-hook ()
   (setq indent-tabs-mode nil)
   (setq c-default-style "linux")
@@ -42,14 +56,9 @@
   (line-number-mode t)
   (hs-minor-mode t)
   (fold-dwim-org/minor-mode t)
-  (add-to-list 'write-file-functions 'delete-trailing-whitespace))
-
-;;; ref: http://www.emacswiki.org/emacs/UntabifyUponSave
-;;; if indent-tabs-mode is off, untabify before saving
-(add-hook 'write-file-hooks 
-          (lambda () (if (not indent-tabs-mode)
-                         (untabify (point-min) (point-max)))
-                      nil ))
+  (add-hook 'local-write-file-hooks 'indent-all)
+  (add-hook 'local-write-file-hooks 'delete-trailing-whitespace)
+  (add-hook 'local-write-file-hooks 'untabify-all))
 
 (add-hook 'c-mode-common-hook
           'my-c-mode-common-hook)
