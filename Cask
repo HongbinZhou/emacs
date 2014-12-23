@@ -67,6 +67,5 @@
 
 (depends-on "bookmark+")
 (depends-on "python-mode")
-(depends-on "python-mode")
 (depends-on "multiple-cursors")
 (depends-on "occur-default-current-word")

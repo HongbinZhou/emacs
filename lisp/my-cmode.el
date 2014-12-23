@@ -25,6 +25,20 @@
 (define-key cm-map "b" 'outline-backward-same-level)       ; Backward - same level
 (global-set-key "\M-o" cm-map)
 
+(defun indent-all ()
+    "Indent entire buffer."
+    (interactive)
+    (save-excursion
+	(indent-region (point-min) (point-max) nil)))
+
+(defun untabify-all ()
+    "untabify entire buffer"
+    (interactive)
+    (save-excursion
+	(if (not indent-tabs-mode)
+		(untabify (point-min) (point-max)))
+	nil))
+
 (defun my-c-mode-common-hook ()
   (setq indent-tabs-mode nil)
   (setq c-default-style "linux")
@@ -41,7 +55,10 @@
   (eldoc-mode t)
   (line-number-mode t)
   (hs-minor-mode t)
-  (fold-dwim-org/minor-mode t))
+  (fold-dwim-org/minor-mode t)
+  (add-hook 'local-write-file-hooks 'indent-all)
+  (add-hook 'local-write-file-hooks 'delete-trailing-whitespace)
+  (add-hook 'local-write-file-hooks 'untabify-all))
 
 (add-hook 'c-mode-common-hook
           'my-c-mode-common-hook)
@@ -57,3 +74,30 @@
 
 (require 'whitespace)
 (setq whitespace-style '(tabs tab-mark)) ;turns on white space mode only for tabs
+
+
+;;; ref: http://tuhdo.github.io/c-ide.html#sec-1-1
+
+(setq
+ helm-gtags-ignore-case t
+ helm-gtags-auto-update t
+ helm-gtags-use-input-at-cursor t
+ helm-gtags-pulse-at-cursor t
+ helm-gtags-prefix-key "\C-cg"
+ helm-gtags-suggested-key-mapping t
+ helm-gtags-path-style 'absolute
+ )
+
+(require 'helm-gtags)
+;; Enable helm-gtags-mode
+(add-hook 'dired-mode-hook 'helm-gtags-mode)
+(add-hook 'eshell-mode-hook 'helm-gtags-mode)
+(add-hook 'c-mode-hook 'helm-gtags-mode)
+(add-hook 'c++-mode-hook 'helm-gtags-mode)
+(add-hook 'asm-mode-hook 'helm-gtags-mode)
+
+(define-key helm-gtags-mode-map (kbd "C-c g a") 'helm-gtags-tags-in-this-function)
+(define-key helm-gtags-mode-map (kbd "M-.") 'helm-gtags-dwim)
+(define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack)
+(define-key helm-gtags-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
+(define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)

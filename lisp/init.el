@@ -242,6 +242,9 @@
 ;;; ahg
 (require 'ahg)
 
+;;; mercurial 
+(require 'mercurial)
+
 ;;; using re-builder to do replace
 ;;; http://www.emacswiki.org/ReBuilder
 (defun hbzhou/reb-query-replace (to-string)
