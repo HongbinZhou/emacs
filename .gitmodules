@@ -1,0 +1,3 @@
+[submodule "plugins/emacs-grep-o-matic"]
+	path = plugins/emacs-grep-o-matic
+	url = https://github.com/ZungBang/emacs-grep-o-matic.git

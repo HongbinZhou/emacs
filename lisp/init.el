@@ -264,4 +264,9 @@
 by changing them to C:/*"
   (when (string-match "/cygdrive/\\([a-z]\\)/\\(.*\\)" filename)
 (setq filename (concat (match-string 1 filename) ":/"
-               (match-string 2 filename)))))
+		       (match-string 2 filename)))))
+
+
+;;; emacs-grep-o-matic
+(add-to-list 'load-path "~/.emacs.d/plugins/emacs-grep-o-matic")
+(require 'grep-o-matic)
