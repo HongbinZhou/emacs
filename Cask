@@ -31,8 +31,6 @@
 
 (depends-on "magit")
 (depends-on "monky")
-(depends-on "ntcmd")
-(depends-on "ntcmd")
 
 (depends-on "occur-default-current-word")
 
@@ -69,3 +67,5 @@
 (depends-on "python-mode")
 (depends-on "multiple-cursors")
 (depends-on "occur-default-current-word")
+
+(depends-on "dos")
