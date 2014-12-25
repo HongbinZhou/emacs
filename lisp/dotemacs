@@ -21,7 +21,6 @@
 ;; (load-user-file "tex.el")
 (load-user-file "tramp.el")
 (load-user-file "term.el")
-(load-user-file "xsel.el")
 (load-user-file "my-shell.el")
 (load-user-file "macro.el")
 (load-user-file "my-rxvt.el")
@@ -43,10 +42,11 @@
     (load-user-file "osx.el")))
  ((string-equal system-type "gnu/linux") ; linux
   (progn
-    (message "Linux"))))
+    (message "Linux")
+    (load-user-file "xsel.el"))))
 
 
-;; (load-user-file "mutt.el")
+;; (Load-user-file "mutt.el")
 ;; (load-user-file "timestamp.el")
 ;; (load-user-file "sdcv.el")
 ;; (load-user-file "verilog.el")
