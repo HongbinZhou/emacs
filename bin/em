@@ -1,4 +1,9 @@
 #!/bin/sh
+
+# strange! can't input chinese in emacs. 
+# solution ref: https://wiki.archlinux.org/index.php/fcitx
+export LC_CTYPE="zh_CN.UTF-8"
+
 ALTERNATE=""
 [[ $(uname -o) = "Cygwin" ]] && echo "I am in Cygwin..." && ALTERNATE=" "
 emacsclient -a "$ALTERNATE" -t "$@"
