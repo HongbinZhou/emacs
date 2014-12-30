@@ -69,3 +69,4 @@
 (depends-on "occur-default-current-word")
 
 (depends-on "dos")
+(depends-on "multi-web-mode")
