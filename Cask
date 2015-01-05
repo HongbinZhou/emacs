@@ -70,3 +70,5 @@
 
 (depends-on "dos")
 (depends-on "multi-web-mode")
+
+(depends-on "inf-ruby")
