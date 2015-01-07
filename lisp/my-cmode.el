@@ -94,10 +94,12 @@
 ;;; https://github.com/syohex/emacs-helm-gtags
 ;;  helm-gtags-path-style(Default 'root)
 ;;  File path style, 'root or 'relative or 'absolute. You can only use 'absolute if you use Windows and set GTAGSLIBPATH environment variable. helm-gtags.el forces to use absolute style in such case.
+;;; NOTE: The forward slash at the end is MUST!!
+
 (setq helm-gtags-path-style 'absolute)
 (setenv "GTAGSLIBPATH"
 	(concat
-	 "E:/workspace/local/vocvoc_embh" ";"
+	 "E:/workspace/local/vocvoc_embh/ttssrc.a/" ";"
 	 (getenv "GTAGSLIBPATH")))
 
 (require 'helm-gtags)
