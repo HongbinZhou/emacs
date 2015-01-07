@@ -89,8 +89,16 @@
  helm-gtags-pulse-at-cursor t
  helm-gtags-prefix-key "\C-cg"
  helm-gtags-suggested-key-mapping t
- helm-gtags-path-style 'absolute
  )
+
+;;; https://github.com/syohex/emacs-helm-gtags
+;;  helm-gtags-path-style(Default 'root)
+;;  File path style, 'root or 'relative or 'absolute. You can only use 'absolute if you use Windows and set GTAGSLIBPATH environment variable. helm-gtags.el forces to use absolute style in such case.
+(setq helm-gtags-path-style 'absolute)
+(setenv "GTAGSLIBPATH"
+	(concat
+	 "E:/workspace/local/vocvoc_embh" ";"
+	 (getenv "GTAGSLIBPATH")))
 
 (require 'helm-gtags)
 ;; Enable helm-gtags-mode
