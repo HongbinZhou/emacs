@@ -97,10 +97,7 @@
 ;;; NOTE: The forward slash at the end is MUST!!
 
 (setq helm-gtags-path-style 'absolute)
-(setenv "GTAGSLIBPATH"
-	(concat
-	 "E:/workspace/local/vocvoc_embh/ttssrc.a/" ";"
-	 (getenv "GTAGSLIBPATH")))
+(setenv "GTAGSLIBPATH" "E:/workspace/local/vocvoc_embh/ttssrc.a/")
 
 (require 'helm-gtags)
 ;; Enable helm-gtags-mode
