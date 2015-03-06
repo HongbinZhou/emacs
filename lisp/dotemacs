@@ -28,6 +28,7 @@
 (load-user-file "my-window.el")
 (load-user-file "my-haskell.el")
 (load-user-file "my-cmode.el")
+(load-user-file "my-python.el")
 
 ;; OS specific config files
 ;; http://ergoemacs.org/emacs/elisp_determine_OS_version.html

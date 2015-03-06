@@ -72,3 +72,6 @@
 (depends-on "multi-web-mode")
 
 (depends-on "inf-ruby")
+
+(depends-on "highlight-indentation")
+(depends-on "htmlize")
