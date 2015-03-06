@@ -18,7 +18,9 @@
 (depends-on "git-commit-mode")
 (depends-on "git-rebase-mode")
 (depends-on "go-mode")
+
 (depends-on "haskell-mode")
+(depends-on "ghc")
 
 (depends-on "helm")
 (depends-on "helm-ack")
