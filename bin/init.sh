@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # install cask
-curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
+curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python2
 
 whereAmI=$(dirname $(readlink -f $0))
 # link .emacs
