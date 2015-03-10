@@ -72,6 +72,8 @@
  '(column-number-mode t)
  '(desktop-path (quote ("~")))
  '(display-time-mode t)
+ '(haskell-process-type (quote cabal-repl))
+ '(haskell-tags-on-save t)
  '(icicle-command-abbrev-alist (quote ((rename-uniquely ru 1))))
  '(org-file-apps
    (quote
