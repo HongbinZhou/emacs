@@ -18,19 +18,17 @@
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
 
-
-;; The following setting is different from the document so that you
-;; can override the document org-agenda-files by setting your
-;; org-agenda-files in the variable org-user-agenda-files
-;;
-(if (boundp 'org-user-agenda-files)
-    (setq org-agenda-files org-user-agenda-files)
-(setq org-agenda-files (list "~/Dropbox/doc/org/refile.org"
-			     "~/Dropbox/doc/org/todo.org"
-			     "~/Dropbox/doc/org/worklog.org"
-			     "~/Dropbox/doc/org/studylog.org"
-			     "~/Dropbox/doc/org/notes.org"			     
-			     )))
+(setq org-agenda-files
+      (append (if (file-exists-p "~/Dropbox/doc/org/refile.org")
+		  (list "~/Dropbox/doc/org/refile.org") nil)
+	      (if (file-exists-p "~/Dropbox/doc/org/todo.org" )
+		  (list "~/Dropbox/doc/org/todo.org") nil)
+	      (if (file-exists-p "~/Dropbox/doc/org/worklog.org" )
+		  (list "~/Dropbox/doc/org/worklog.org") nil)
+	      (if (file-exists-p "~/Dropbox/doc/org/studylog.org" )
+		  (list "~/Dropbox/doc/org/studylog.org") nil)
+	      (if (file-exists-p "~/Dropbox/doc/org/notes.org" )
+		  (list "~/Dropbox/doc/org/notes.org") nil)))
 
 ;; Custom Key Bindings
 (global-set-key (kbd "<f12>") 'org-agenda)
