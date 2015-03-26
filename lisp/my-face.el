@@ -101,7 +101,7 @@ If set/leave chinese-font-size to nil, it will follow english-font-size"
 
 (setq face-font-rescale-alist 
       '(("DejaVu Sans Mono" . 1.0) 
-        ("文泉驿等宽微米黑" . 1.2)))
+        ("文泉驿等宽微米黑" . 1.0)))
 
 ;    (setq face-font-rescale-alist
 ;          '(("AR PL UMing CN" . 1.2)
