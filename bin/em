@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # strange! can't input chinese in emacs. 
 # solution ref: https://wiki.archlinux.org/index.php/fcitx
