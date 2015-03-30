@@ -1,4 +1,7 @@
 #!/bin/bash
+
+export LC_CTYPE="zh_CN.UTF-8"
+
 ALTERNATE=""
 [[ $(uname -o) = "Cygwin" ]] && ALTERNATE=" "
 emacsclient -a "$ALTERNATE" -c -n "$@"
