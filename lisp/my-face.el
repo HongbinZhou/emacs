@@ -119,7 +119,7 @@ If set/leave chinese-font-size to nil, it will follow english-font-size"
   (message "set-window-system-faces")
   (qiang-set-font
    ;; '("Monospace" "DejaVu Sans Mono" "Monaco" "Consolas" ) 10.5
-   '("Consolas" "DejaVu Sans Mono" "Monospace" "Monaco" ) 11
+   '("Consolas" "DejaVu Sans Mono" "Monospace" "Monaco" ) 13
    '("Microsoft Yahei" "文泉驿等宽微米黑" "AR PL UMing CN" "STHeiti" "新宋体" "微软雅黑" "文泉驿正黑")
    ;; '("文泉驿等宽微米黑" "AR PL UMing CN" "STHeiti" "新宋体" "微软雅黑" "文泉驿正黑")   
    '("SimSun-ExtB" "HamaMinB" "MingLiU-ExtB"))
