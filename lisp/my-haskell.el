@@ -12,7 +12,15 @@
   (setenv "PATH" (concat my-cabal-path ":" (getenv "PATH")))
   (add-to-list 'exec-path my-cabal-path))
 
+
+;;; https://github.com/haskell/haskell-mode/wiki/Haskell-Interactive-Mode-Tags
 (custom-set-variables '(haskell-tags-on-save t))
+(define-key haskell-mode-map (kbd "M-.") 'haskell-mode-jump-to-def-or-tag)
+
+(require 'haskell-interactive-mode)
+(require 'haskell-process)
+(add-hook 'haskell-mode-hook 'interactive-haskell-mode)
+
 
 (custom-set-variables
  '(haskell-process-suggest-remove-import-lines t)
