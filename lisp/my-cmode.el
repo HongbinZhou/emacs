@@ -96,19 +96,29 @@
 ;;  File path style, 'root or 'relative or 'absolute. You can only use 'absolute if you use Windows and set GTAGSLIBPATH environment variable. helm-gtags.el forces to use absolute style in such case.
 ;;; NOTE: The forward slash at the end is MUST!!
 
-(setq helm-gtags-path-style 'absolute)
-(setenv "GTAGSLIBPATH" "E:/workspace/local/vocvoc_embh/")
+(cond
+ ((string-equal system-type "windows-nt") ; Microsoft Windows
+  (progn
+    (message "setting helm-gtags on Microsoft Windows ...")
+    (setq helm-gtags-path-style 'absolute)
+    (setenv "GTAGSLIBPATH" "E:/workspace/local/vocvoc_embh/")
+    )))
 
 (require 'helm-gtags)
 ;; Enable helm-gtags-mode
-(add-hook 'dired-mode-hook 'helm-gtags-mode)
-(add-hook 'eshell-mode-hook 'helm-gtags-mode)
 (add-hook 'c-mode-hook 'helm-gtags-mode)
 (add-hook 'c++-mode-hook 'helm-gtags-mode)
 (add-hook 'asm-mode-hook 'helm-gtags-mode)
 
-(define-key helm-gtags-mode-map (kbd "C-c g a") 'helm-gtags-tags-in-this-function)
-(define-key helm-gtags-mode-map (kbd "M-.") 'helm-gtags-dwim)
-(define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack)
-(define-key helm-gtags-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
-(define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
+(eval-after-load "helm-gtags"
+  '(progn
+     (define-key helm-gtags-mode-map (kbd "M-t") 'helm-gtags-find-tag)
+     (define-key helm-gtags-mode-map (kbd "M-r") 'helm-gtags-find-rtag)
+     (define-key helm-gtags-mode-map (kbd "M-s") 'helm-gtags-find-symbol)
+     (define-key helm-gtags-mode-map (kbd "M-g M-p") 'helm-gtags-parse-file)
+     (define-key helm-gtags-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
+     (define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
+     (define-key helm-gtags-mode-map (kbd "C-c g a") 'helm-gtags-tags-in-this-function)
+     (define-key helm-gtags-mode-map (kbd "M-.") 'helm-gtags-dwim)
+     (define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack)))
+
