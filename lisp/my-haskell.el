@@ -15,7 +15,6 @@
 
 ;;; https://github.com/haskell/haskell-mode/wiki/Haskell-Interactive-Mode-Tags
 (custom-set-variables '(haskell-tags-on-save t))
-(define-key haskell-mode-map (kbd "M-.") 'haskell-mode-jump-to-def-or-tag)
 
 (require 'haskell-interactive-mode)
 (require 'haskell-process)
@@ -29,6 +28,7 @@
 
 (eval-after-load 'haskell-mode
   '(progn
+     (define-key haskell-mode-map (kbd "M-.") 'haskell-mode-jump-to-def-or-tag)
      (define-key haskell-mode-map (kbd "C-c C-l") 'haskell-process-load-or-reload)
      (define-key haskell-mode-map (kbd "C-c C-z") 'haskell-interactive-switch)
      (define-key haskell-mode-map (kbd "C-c C-n C-t") 'haskell-process-do-type)
