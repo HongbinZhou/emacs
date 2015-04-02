@@ -273,3 +273,8 @@ by changing them to C:/*"
 ;;; emacs-grep-o-matic
 (add-to-list 'load-path "~/.emacs.d/plugins/emacs-grep-o-matic")
 (require 'grep-o-matic)
+
+;;; open txt and tso log with utf-8 coding
+;;; ref: http://emacswiki.org/emacs/ChangingEncodings
+(modify-coding-system-alist 'file "\\.txt\\'" 'utf-8)
+(modify-coding-system-alist 'file "\\.tso\\'" 'utf-8)
