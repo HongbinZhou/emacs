@@ -38,3 +38,4 @@
 ;; (require 'cygwin-mount)
 ;; (cygwin-mount-activate)
 
+(add-to-list 'auto-mode-alist '("\\.bat\\'" . bat-mode))
