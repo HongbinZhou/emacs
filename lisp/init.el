@@ -278,3 +278,6 @@ by changing them to C:/*"
 ;;; ref: http://emacswiki.org/emacs/ChangingEncodings
 (modify-coding-system-alist 'file "\\.txt\\'" 'utf-8)
 (modify-coding-system-alist 'file "\\.tso\\'" 'utf-8)
+
+;; setup files ending in “.tso” to open in nxml-mode
+(add-to-list 'auto-mode-alist '("\\.tso\\'" . nxml-mode))
