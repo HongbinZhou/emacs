@@ -77,3 +77,6 @@
 
 (depends-on "highlight-indentation")
 (depends-on "htmlize")
+
+;; https://github.com/Malabarba/aggressive-indent-mode
+(depends-on "aggressive-indent")
