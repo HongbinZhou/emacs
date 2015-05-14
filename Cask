@@ -80,3 +80,5 @@
 
 ;; https://github.com/Malabarba/aggressive-indent-mode
 (depends-on "aggressive-indent")
+
+(depends-on "jade-mode")
