@@ -82,3 +82,4 @@
 (depends-on "aggressive-indent")
 
 (depends-on "jade-mode")
+(depends-on "rust-mode")
