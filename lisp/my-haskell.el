@@ -18,3 +18,13 @@
  '(haskell-process-log t))
 
 (custom-set-variables '(haskell-process-type 'cabal-repl))
+
+
+(defun my-haskell-mode-hook ()
+  (setq-default show-trailing-whitespace t)
+  (setq-default require-final-newline t)
+  (setq-default delete-trailing-lines nil)
+  (add-hook 'local-write-file-hooks 'delete-trailing-whitespace)
+  (add-hook 'local-write-file-hooks 'untabify-all))
+(add-hook 'haskell-mode-hook 'my-haskell-mode-hook)
+
