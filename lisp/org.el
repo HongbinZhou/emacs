@@ -1950,3 +1950,7 @@ of the next."
 ;;; ref: http://stackoverflow.com/questions/22988092/emacs-org-mode-export-markdown
 (eval-after-load "org"
     '(require 'ox-md nil t))
+
+;;; enable auto-fill-mode
+;;; remember to use M-q !
+(add-hook 'org-mode-hook 'turn-on-auto-fill)
