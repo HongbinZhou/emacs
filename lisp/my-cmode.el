@@ -41,9 +41,9 @@
 
 (defun my-c-mode-common-hook ()
   (setq indent-tabs-mode nil)
-  (setq c-default-style "linux")
-  (setq c-basic-offset 4)
-  (setq tab-width 4)
+  (setq c-default-style "bsd")
+  (setq c-basic-offset 2)
+  (setq tab-width 2)
   (electric-indent-mode 1)
   (c-toggle-auto-hungry-state 1)
   ;;; smart-tab
@@ -56,13 +56,14 @@
   (line-number-mode t)
   (hs-minor-mode t)
   (fold-dwim-org/minor-mode t)
-  (add-hook 'local-write-file-hooks 'indent-all)
   ;; handle trailing space
   (setq-default show-trailing-whitespace t)
   (setq-default require-final-newline t)
   (setq-default delete-trailing-lines nil)
-  (add-hook 'local-write-file-hooks 'delete-trailing-whitespace)
-  (add-hook 'local-write-file-hooks 'untabify-all))
+  ;; (add-hook 'local-write-file-hooks 'delete-trailing-whitespace)
+  ;; (add-hook 'local-write-file-hooks 'untabify-all)
+  ;; (add-hook 'local-write-file-hooks 'indent-all)
+  )
 
 (add-hook 'c-mode-common-hook
           'my-c-mode-common-hook)
@@ -122,3 +123,5 @@
      (define-key helm-gtags-mode-map (kbd "M-.") 'helm-gtags-dwim)
      (define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack)))
 
+;;; C-q [num in december]
+(setq read-quoted-char-radix 10)
