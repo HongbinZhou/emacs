@@ -136,7 +136,7 @@
 	       "* TODO %?\nSCHEDULED: %^t\n%U\n%a\n" :prepend t)
               ("n" "note" entry (file "~/Dropbox/doc/org/refile.org")
                "* %? :NOTE:\n%U\n%a\n")
-	      ("d" "Diary" entry (file+headline "~/Dropbox/doc/diary/diary.org" "2014") "* %U %?" :prepend t)
+	      ("d" "Diary" entry (file+headline "~/Dropbox/doc/diary/diary.org" "2015") "* %U %?" :prepend t)
 	      ("w" "org-protocol" entry (file "~/Dropbox/doc/org/refile.org")
                "* TODO Review %c\n%U\n" :immediate-finish t)
               ("m" "Meeting" entry (file "~/Dropbox/doc/org/refile.org")
