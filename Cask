@@ -15,8 +15,6 @@
 (depends-on "fold-dwim")
 (depends-on "fold-dwim-org")
 (depends-on "ggtags")
-(depends-on "git-commit-mode")
-(depends-on "git-rebase-mode")
 (depends-on "go-mode")
 
 (depends-on "haskell-mode")

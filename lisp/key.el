@@ -104,3 +104,7 @@
 
 ;; Magit rules!
 (global-set-key (kbd "C-x g") 'magit-status)
+
+;; regexp count occurrences
+;; http://stackoverflow.com/questions/11847547/emacs-regexp-count-occurrences
+(global-set-key (kbd "C-c o") 'count-matches)
