@@ -93,8 +93,14 @@
 
 (global-set-key (kbd "C-c r") 'query-replace-regexp)
 
-(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
-
+;;; avy
+;;  ref: https://github.com/abo-abo/avy
+;;  It will bind, for example, avy-isearch to C-' in isearch-mode-map, so that you can select one of the currently visible isearch candidates using avy.
+(avy-setup-default)
+;; extra key bindings for avy
+(global-set-key (kbd "C-;") 'avy-goto-char)
+(global-set-key (kbd "M-g g") 'avy-goto-line)
+(global-set-key (kbd "M-g w") 'avy-goto-word-1)
 
 ;;; ref:
 ;;;     http://stackoverflow.com/questions/3124844/what-are-your-favorite-global-key-bindings-in-emacs

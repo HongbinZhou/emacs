@@ -4,7 +4,7 @@
 (source marmalade)
 (source org)
 
-(depends-on "ace-jump-mode")
+(depends-on "avy")
 (depends-on "auto-complete")
 (depends-on "autopair")
 (depends-on "dash")
