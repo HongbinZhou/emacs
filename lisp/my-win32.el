@@ -10,6 +10,12 @@
 (setq ispell-program-name "aspell")
 (setq ispell-personal-dictionary "C:/Program Files (x86)/Aspell/dict")
 
+(global-set-key (kbd "C-x C-c") 'my-done)
+(defun my-done ()
+  (interactive)
+  (server-edit)
+  (make-frame-invisible nil t))
+
 ;; Prevent issues with the Windows null device (NUL)
 ;; when using cygwin find with rgrep.
 (defadvice grep-compute-defaults (around grep-compute-defaults-advice-null-device)
