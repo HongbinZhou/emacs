@@ -281,3 +281,53 @@ by changing them to C:/*"
 
 ;; setup files ending in “.tso” to open in nxml-mode
 (add-to-list 'auto-mode-alist '("\\.tso\\'" . nxml-mode))
+
+;;; ref: https://github.com/codemac/config/blob/master/emacs.d/boot.org#narrow-to-indirect-buffer
+(defun cm/narrow-to-region-indirect (start end)
+  "Restrict editing in this buffer to the current region, indirectly."
+  (interactive "r")
+  (when (fboundp 'evil-exit-visual-state) ; There's probably a nicer way to do this
+    (evil-exit-visual-state))
+  (let ((buf (clone-indirect-buffer nil nil)))
+    (with-current-buffer buf
+      (narrow-to-region start end))
+    (switch-to-buffer buf)))
+
+(global-set-key (kbd "C-x n i") 'cm/narrow-to-region-indirect)
+
+;;; Easy to copy code to show
+(defun kill-with-linenum (beg end)
+  (interactive "r")
+  (save-excursion
+    (goto-char end)
+    (skip-chars-backward "\n \t")
+    (setq end (point))
+    (let* ((chunk (buffer-substring beg end))
+           (chunk (concat
+                   (format "╭──────── #%-d ─ %s ──\n│ "
+                           (line-number-at-pos beg)
+                           (or (buffer-file-name) (buffer-name)))
+                   (replace-regexp-in-string "\n" "\n│ " chunk)
+                   (format "\n╰──────── #%-d ─" 
+                           (line-number-at-pos end)))))
+      (kill-new chunk)))
+  (deactivate-mark))
+
+;;; open file as root
+(defadvice find-file (around th-find-file activate)
+  "Open FILENAME using tramp's sudo method if it's read-only."
+  (let ((thefile (ad-get-arg 0)))
+    (if (string-prefix-p "/etc" thefile)
+        (if (and (not (file-writable-p thefile))
+                 (y-or-n-p (concat "File "
+                                   thefile
+                                   " is read-only.  Open it as root? ")))
+            (cm/find-file-sudo thefile))))
+  ad-do-it)
+
+(defun cm/find-file-sudo (file)
+  "Opens FILE with root privileges."
+  (interactive "F")
+  (set-buffer (find-file (concat "/sudo::" file))))
+
+(set-default 'indicate-empty-lines t)

@@ -47,3 +47,15 @@
         (when line (goto-line line)))
       (error "File does not exist."))))
 (global-set-key (kbd "C-x f") 'my-find-file-at-point-with-line)
+
+;; Open files with root
+(defun cm/rename-tramp-buffer ()
+  (when (file-remote-p (buffer-file-name))
+    (rename-buffer
+     (format "%s:%s"
+             (file-remote-p (buffer-file-name) 'method)
+             (buffer-name)))))
+
+(add-hook 'find-file-hook
+          'cm/rename-tramp-buffer)
+
