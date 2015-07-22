@@ -17,3 +17,7 @@
   (define-key dired-sort-map "n"
               '(lambda () "sort by Name"
                  (interactive) (dired-sort-other (concat dired-listing-switches ""))))))
+
+;;; make dired async
+(autoload 'dired-async-mode "dired-async.el" nil t)
+(dired-async-mode 1)

@@ -81,3 +81,6 @@
 
 (depends-on "jade-mode")
 (depends-on "rust-mode")
+
+(depends-on "async")
+
