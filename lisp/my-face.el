@@ -42,7 +42,7 @@
   (if (null (x-list-fonts font)) nil t))
 
 (defun qiang-make-font-string (font-name font-size)
-  (if (and (stringp font-size) 
+  (if (and (stringp font-size)
            (equal ":" (string (elt font-size 0))))
       (format "%s%s" font-name font-size)
     (format "%s-%s" font-name font-size)))
@@ -99,8 +99,8 @@ If set/leave chinese-font-size to nil, it will follow english-font-size"
 ;; 注意： 添加字体一定要重启 Emacs 才会生效！ 参考
 ;;  - http://debbugs.gnu.org/db/17/1785.html
 
-(setq face-font-rescale-alist 
-      '(("DejaVu Sans Mono" . 1.0) 
+(setq face-font-rescale-alist
+      '(("DejaVu Sans Mono" . 1.0)
         ("文泉驿等宽微米黑" . 1.0)))
 
 ;    (setq face-font-rescale-alist
@@ -112,7 +112,7 @@ If set/leave chinese-font-size to nil, it will follow english-font-size"
 ;    	("微软雅黑" . 1.2)
 ;    	("文泉驿正黑" . 1.2)
 ;    	))
-    
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defun set-window-system-faces ()
@@ -121,7 +121,7 @@ If set/leave chinese-font-size to nil, it will follow english-font-size"
    ;; '("Monospace" "DejaVu Sans Mono" "Monaco" "Consolas" ) 10.5
    '("Consolas" "DejaVu Sans Mono" "Monospace" "Monaco" ) 13
    '("Microsoft Yahei" "文泉驿等宽微米黑" "AR PL UMing CN" "STHeiti" "新宋体" "微软雅黑" "文泉驿正黑")
-   ;; '("文泉驿等宽微米黑" "AR PL UMing CN" "STHeiti" "新宋体" "微软雅黑" "文泉驿正黑")   
+   ;; '("文泉驿等宽微米黑" "AR PL UMing CN" "STHeiti" "新宋体" "微软雅黑" "文泉驿正黑")
    '("SimSun-ExtB" "HamaMinB" "MingLiU-ExtB"))
   (set-face-attribute 'default nil :font (font-spec))
   (tool-bar-mode 0)
@@ -130,7 +130,7 @@ If set/leave chinese-font-size to nil, it will follow english-font-size"
 
 (defun set-console-faces ()
   (message "set-console-faces")
-  (menu-bar-mode 0)  
+  (menu-bar-mode 0)
   (set-face-background 'hl-line console-hl-line-face-background (selected-frame)))
 
 

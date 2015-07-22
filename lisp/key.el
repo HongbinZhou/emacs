@@ -13,9 +13,9 @@
       (ansi-term prg prg))))
 
 (defmacro djcb-program-shortcut (name key &optional use-existing)
-  "* macro to create a key binding KEY to start some terminal program PRG; 
+  "* macro to create a key binding KEY to start some terminal program PRG;
     if USE-EXISTING is true, try to switch to an existing buffer"
-  `(global-set-key ,key 
+  `(global-set-key ,key
      '(lambda()
         (interactive)
         (djcb-term-start-or-switch ,name ,use-existing))))
@@ -45,7 +45,7 @@
 
 
 (global-set-key (kbd "C-c z") 'shell)
-(global-set-key (kbd "C-z") 'eshell) 
+(global-set-key (kbd "C-z") 'eshell)
 (global-set-key (kbd "<f9>") 'rename-buffer)
 
 
@@ -68,7 +68,7 @@
 
 (defun bind-compile-key ()
   (local-set-key "\C-c\C-c" 'compile))
-(add-hook 'c-mode-hook 'bind-compile-key) 
+(add-hook 'c-mode-hook 'bind-compile-key)
 (add-hook 'c++-mode-hook 'bind-compile-key)
 
 

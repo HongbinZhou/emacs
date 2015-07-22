@@ -68,7 +68,7 @@
 ;;   (switch-to-buffer term-ansi-buffer-name))
 
 ;; (defun cdmgr1 ()
-;;   (interactive) 
+;;   (interactive)
 ;;   (remote-term "cdmgr1" "ssh" "cdmgr1@peemt741"))
 
   ;; (defun track-shell-directory/procfs ()

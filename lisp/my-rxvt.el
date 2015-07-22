@@ -1,6 +1,6 @@
 
 ; load my-rxvt.el
-; 
+;
 (add-hook 'after-make-frame-functions
           (lambda (new-frame)
            (with-selected-frame new-frame

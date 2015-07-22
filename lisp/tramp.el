@@ -14,13 +14,13 @@
 (defun us01-shell ()
   "Run zsh in am04 site"
   (interactive)
-  (let ((explicit-shell-file-name "/remote/us01home40/hbzhou/bin/zsh"))    
+  (let ((explicit-shell-file-name "/remote/us01home40/hbzhou/bin/zsh"))
     (call-interactively 'shell)))
 
 (defun am04-shell ()
   "Run zsh in am04 site"
   (interactive)
-  (let ((explicit-shell-file-name "/remote/am04home1/cdmgr/hbzhou/bin/zsh"))    
+  (let ((explicit-shell-file-name "/remote/am04home1/cdmgr/hbzhou/bin/zsh"))
     (call-interactively 'shell)))
 (defun my-find-file-at-point-with-line ()
   "Opens the file at point and goes to line-number."

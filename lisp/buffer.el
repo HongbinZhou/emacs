@@ -15,7 +15,7 @@
           windows, use `window-number-mode' to display the window numbers in
           the mode-line."
           t)
-(window-number-mode 1) 
+(window-number-mode 1)
 (window-number-meta-mode 1)
 
 ;;; buffer-extension

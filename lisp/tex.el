@@ -32,18 +32,18 @@
                \\usepackage{beamerinnerthemecircles}
                \\usepackage{hyperref}
                \\usepackage{color}
-               \\usepackage{xeCJK} 
+               \\usepackage{xeCJK}
                \\usepackage{fontspec}
                \\usepackage{listings}
                \\setmainfont{Times New Roman}
                \\setsansfont{Arial}
                \\setmonofont{Courier New}
-               \\setCJKmainfont[BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti Std}]{Adobe Song Std} 
+               \\setCJKmainfont[BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti Std}]{Adobe Song Std}
                \\setCJKsansfont{Adobe Heiti Std}
                \\setCJKmonofont{Adobe Kaiti Std}
                \\setCJKfamilyfont{song}{Adobe Song Std}
                \\setCJKfamilyfont{hei}{Adobe Heiti Std}
-               \\setCJKfamilyfont{fs}{Adobe Fangsong Std} 
+               \\setCJKfamilyfont{fs}{Adobe Fangsong Std}
                \\setCJKfamilyfont{kai}{Adobe Kaiti Std}
                \\setCJKfamilyfont{li}{Adobe Kaiti Std}
                \\setCJKfamilyfont{you}{Adobe Kaiti Std}
@@ -56,7 +56,7 @@
                commentstyle=\\color{red},
                }\n
                \\usepackage{verbatim}\n
-               \\institute{{{{MediaSoC}}}}\n          
+               \\institute{{{{MediaSoC}}}}\n
                \\subject{{{{beamersubject}}}}\n"
                ("\\section{%s}" . "\\section*{%s}")
                ("\\begin{frame}[fragile]\\frametitle{%s}"
@@ -64,6 +64,6 @@
                 "\\begin{frame}[fragile]\\frametitle{%s}"
                 "\\end{frame}")))
 
-(setq org-latex-to-pdf-process 
+(setq org-latex-to-pdf-process
       '("xelatex -interaction nonstopmode %f"
         "xelatex -interaction nonstopmode %f")) ;; for multiple passes

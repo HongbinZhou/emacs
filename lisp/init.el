@@ -4,7 +4,7 @@
 (cask-initialize)
 
 
-(add-to-list 'load-path "~/.emacs.d/plugins")    
+(add-to-list 'load-path "~/.emacs.d/plugins")
 
 (set-language-environment "UTF-8")
 ;; (set-language-environment 'Chinese-GBK)
@@ -27,10 +27,10 @@
 
 ;;; winner-mode
 ;; using Ctrl-c + <- (left arrow) to restore the latest frame orgnization
-(when (fboundp 'winner-mode) 
-  (winner-mode) 
+(when (fboundp 'winner-mode)
+  (winner-mode)
   ;(windmove-default-keybindings)
-  ) 
+  )
 
 ;;; autorevert stuff
 (autoload 'auto-revert-mode "autorevert" nil t)
@@ -65,7 +65,7 @@
 ;(desktop-save-mode 1)
 
 ;;; session
-(require 'session) 
+(require 'session)
 (when (require 'session nil t)
   (add-hook 'after-init-hook 'session-initialize)
   (add-to-list 'session-globals-exclude 'org-mark-ring))
@@ -180,7 +180,7 @@
 
 ;; (require 'occur-default-current-word)
 
-;;; crontab-mode 
+;;; crontab-mode
 (add-to-list 'auto-mode-alist '("cron\\(tab\\)?\\."    . crontab-mode))
 
 ;;; https://github.com/capitaomorte/autopair
@@ -206,7 +206,7 @@
 (powerline-default-theme)
 
 
-;;; Thu May  8 14:02:33 2014    
+;;; Thu May  8 14:02:33 2014
 ;;; popwin.el, nice!
 (require 'popwin)
 (popwin-mode 1)
@@ -242,7 +242,7 @@
 ;;; ahg
 (require 'ahg)
 
-;;; mercurial 
+;;; mercurial
 (require 'mercurial)
 
 ;;; using re-builder to do replace
@@ -308,7 +308,7 @@ by changing them to C:/*"
                            (line-number-at-pos beg)
                            (or (buffer-file-name) (buffer-name)))
                    (replace-regexp-in-string "\n" "\n│ " chunk)
-                   (format "\n╰──────── #%-d ─" 
+                   (format "\n╰──────── #%-d ─"
                            (line-number-at-pos end)))))
       (kill-new chunk)))
   (deactivate-mark))

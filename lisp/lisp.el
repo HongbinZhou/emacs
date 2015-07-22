@@ -51,7 +51,7 @@
 ;; (require 'slime)
 ;; (slime-setup)
 ;; (global-set-key (kbd "\C-c s") 'slime-selector)
-;; (setq slime-protocol-version 'ignore) 
+;; (setq slime-protocol-version 'ignore)
 
 
 ;; (setq slime-lisp-implementations
@@ -62,12 +62,12 @@
 ;; 	  `(begin
 ;; 	    (load-option 'format)
 ;; 	    (load-option 'sos)
-;; 	    (eval 
+;; 	    (eval
 ;; 	     '(construct-normal-package-from-description
-;; 	       (make-package-description '(swank) '(()) 
+;; 	       (make-package-description '(swank) '(())
 ;; 					 (vector) (vector) (vector) false))
 ;; 	     (->environment '(package)))
-;; 	    (load ,(expand-file-name 
+;; 	    (load ,(expand-file-name
 ;; 		    "contrib/swank-mit-scheme.scm" ; <-- insert your path
 ;; 		    slime-path)
 ;; 		  (->environment '(swank)))

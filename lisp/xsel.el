@@ -29,7 +29,7 @@
   ;;   (let ((xsel-output (shell-command-to-string "xsel --clipboard --output")))
   ;;     (unless (string= (car kill-ring) xsel-output)
   ;; 	xsel-output )))
-  
+
   ;; Attach callbacks to hooks
   (setq interprogram-cut-function 'xsel-cut-function)
   ;; (setq interprogram-paste-function 'xsel-paste-function)

@@ -1110,13 +1110,13 @@ Skip project and sub-project tasks, habits, and loose non-project tasks."
 
 (defvar bh/plantuml-if-count 0)
 
-(defun bh/plantuml-if () 
+(defun bh/plantuml-if ()
   (incf bh/plantuml-if-count)
   (number-to-string bh/plantuml-if-count))
 
 (defvar bh/plantuml-loop-count 0)
 
-(defun bh/plantuml-loop () 
+(defun bh/plantuml-loop ()
   (incf bh/plantuml-loop-count)
   (number-to-string bh/plantuml-loop-count))
 
@@ -1129,7 +1129,7 @@ Skip project and sub-project tasks, habits, and loose non-project tasks."
 
 (define-skeleton skel-org-block-plantuml-activity-if
   "Insert a org plantuml block activity if statement"
-  "" 
+  ""
   "if \"\" then\n"
   "  -> [condition] ==IF" (setq ifn (bh/plantuml-if)) "==\n"
   "  --> ==IF" ifn "M1==\n"
@@ -1142,7 +1142,7 @@ Skip project and sub-project tasks, habits, and loose non-project tasks."
 
 (define-skeleton skel-org-block-plantuml-activity-for
   "Insert a org plantuml block activity for statement"
-  "Loop for each: " 
+  "Loop for each: "
   "--> ==LOOP" (setq loopn (bh/plantuml-loop)) "==\n"
   "note left: Loop" loopn ": For each " str "\n"
   "--> ==ENDLOOP" loopn "==\n"
@@ -1831,7 +1831,7 @@ Late deadlines first, then scheduled, then non-late deadlines"
 (add-hook 'org-mode-hook 'turn-on-flyspell 'append)
 
 ;; Disable keys in org-mode
-;;    C-c [ 
+;;    C-c [
 ;;    C-c ]
 ;;    C-c ;
 ;;    C-c C-x C-q  cancelling the clock (we never want this)
@@ -1911,7 +1911,7 @@ of the next."
   "Post the current org item to blogger/blogspot. Tags are converted to blogger labels. If you wish to alter the default blog name prefix the function call (C-u)."
   (interactive)
   (save-excursion
-    (stl/outline-mark-subtree) 
+    (stl/outline-mark-subtree)
     (org-html-export-to-html nil nil nil nil))
   (shell-command (concat "cp "
 			 (concat (file-name-sans-extension buffer-file-name) ".html")
@@ -1935,7 +1935,7 @@ of the next."
   (find-file "~/Dropbox/doc/org/todo.org"))
 
 
-(add-hook 'org-mode-hook 
+(add-hook 'org-mode-hook
           (lambda () (setq truncate-lines nil)))
 
 (setq org-enable-priority-commands t)
@@ -1943,7 +1943,7 @@ of the next."
 (setq org-lowest-priority ?E)
 
 
-(add-hook 'org-mode-hook 
+(add-hook 'org-mode-hook
           (lambda () (setq truncate-lines nil)))
 
 ;;; export to markdown
