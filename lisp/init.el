@@ -3,16 +3,9 @@
 (require 'cask "~/.cask/cask.el")
 (cask-initialize)
 
-
 (add-to-list 'load-path "~/.emacs.d/plugins")
 
 (set-language-environment "UTF-8")
-;; (set-language-environment 'Chinese-GBK)
-
-;; (when
-;;     (load
-;;      (expand-file-name "~/.emacs.d/elpa/package.el"))
-;;   (package-initialize))
 
 ;;; package setting
 (require 'package)
@@ -20,16 +13,14 @@
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "https://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.org/packages/")
+			 ("elpa" . "http://tromey.com/elpa/")
+			 ("org" . "http://orgmode.org/elpa/")
 			 ))
-
-(add-to-list 'package-archives '("elpa" . "http://tromey.com/elpa/"))
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
 
 ;;; winner-mode
 ;; using Ctrl-c + <- (left arrow) to restore the latest frame orgnization
 (when (fboundp 'winner-mode)
   (winner-mode)
-  ;(windmove-default-keybindings)
   )
 
 ;;; autorevert stuff
@@ -87,25 +78,6 @@
 
 (put 'upcase-region 'disabled nil)
 
-
-;(add-to-list 'load-path "~/.emacs.d/elpa/ace-jump-mode-20121104.1157/")
-(autoload
-  'ace-jump-mode
-  "ace-jump-mode"
-  "Emacs quick move minor mode"
-  t)
-
-; default C-c SPC is conflict with org table
-;; (define-key global-map (kbd "C-x SPC") 'ace-jump-mode)
-(autoload
-  'ace-jump-mode-pop-mark
-  "ace-jump-mode"
-  "Ace jump back:-)"
-  t)
-(eval-after-load "ace-jump-mode"
-  '(ace-jump-mode-enable-mark-sync))
-;; (define-key global-map (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
-
 (require 'undo-tree)
 (global-undo-tree-mode)
 
@@ -116,25 +88,6 @@
 ;;; following extension cause halt when tramp ssh file which cannot connect from home
 ;(require 'save-visited-files)
 ;(turn-on-save-visited-files-mode)
-
-
-;; ;;; smex
-;; (require 'smex) ; Not needed if you use package.el
-;; (smex-initialize) ; Can be omitted. This might cause a (minimal) delay
-;;                   ; when Smex is auto-initialized on its first run.
-
-;; (global-set-key (kbd "M-x") 'smex)
-;; (global-set-key (kbd "M-X") 'smex-major-mode-commands)
-;; (global-set-key (kbd "C-c M-x") 'smex-update)
-;; ;; This is your old M-x.
-;; (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
-
-;; (defun smex-update-after-load (unused)
-;;   (when (boundp 'smex-cache)
-;;     (smex-update)))
-;; (add-hook 'after-load-functions 'smex-update-after-load)
-
-;; (setq shell-command-switch "-ic")
 
 ;;; Doubam-fm
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/plugins"))
@@ -153,9 +106,6 @@
 ;; manager under X, such as ratpoison.
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
 
-;;; smart-window
-;; (require 'smart-window)
-
 ;;; save minibuffer history
 (savehist-mode 1)
 
@@ -163,22 +113,11 @@
 ;;; let bookmark load after p4, so C-x p will be used as bookmark's prefix key
 (require 'bookmark+)
 
-
-;;; (setq browse-url-browser-function 'w3m-browse-url)
-;;;  (autoload 'w3m-browse-url "w3m" "Ask a WWW browser to show a URL." t)
-;;;  ;; optional keyboard short-cut
-;;;  (global-set-key "\C-xm" 'browse-url-at-point)
-;;; (define-key w3m-mode-map [mouse-2] 'w3m-mouse-view-this-url-new-session)
-
-
-
 (require 'multiple-cursors)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
-
-;; (require 'occur-default-current-word)
 
 ;;; crontab-mode
 (add-to-list 'auto-mode-alist '("cron\\(tab\\)?\\."    . crontab-mode))
@@ -186,7 +125,6 @@
 ;;; https://github.com/capitaomorte/autopair
 (require 'autopair)
 (autopair-global-mode) ;; to enable in all buffers
-
 
 ;;; YASnippet
 (require 'yasnippet)
@@ -205,26 +143,10 @@
 (require 'powerline)
 (powerline-default-theme)
 
-
 ;;; Thu May  8 14:02:33 2014
 ;;; popwin.el, nice!
 (require 'popwin)
 (popwin-mode 1)
-
-
-;;; Tue May 13 10:35:29 2014
-;;; ace-window
-;;; Usage:
-;;;       swap window: C-u M-p
-;;;       kill window: C-u C-u M-p
-;;;       jump window: M-p <a,b,c,d,...>
-(global-set-key (kbd "M-p") 'ace-window)
-(setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
-
-
-;;; ntcmd-mode
-(add-to-list 'auto-mode-alist '("\\.bat$" . ntcmd-mode))
-(add-to-list 'auto-mode-alist '("\\.cmd$" . ntcmd-mode))
 
 ;;; monky, for hg
 ;;; https://github.com/ananthakumaran/monky
@@ -283,7 +205,7 @@ by changing them to C:/*"
 (add-to-list 'auto-mode-alist '("\\.tso\\'" . nxml-mode))
 
 ;;; ref: https://github.com/codemac/config/blob/master/emacs.d/boot.org#narrow-to-indirect-buffer
-(defun cm/narrow-to-region-indirect (start end)
+(defun hbzhou/narrow-to-region-indirect (start end)
   "Restrict editing in this buffer to the current region, indirectly."
   (interactive "r")
   (when (fboundp 'evil-exit-visual-state) ; There's probably a nicer way to do this
@@ -296,7 +218,7 @@ by changing them to C:/*"
 (global-set-key (kbd "C-x n i") 'cm/narrow-to-region-indirect)
 
 ;;; Easy to copy code to show
-(defun kill-with-linenum (beg end)
+(defun hbzhou/kill-with-linenum (beg end)
   (interactive "r")
   (save-excursion
     (goto-char end)

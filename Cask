@@ -54,7 +54,6 @@
 (depends-on "slime")
 (depends-on "smart-mode-line")
 (depends-on "smart-tabs-mode")
-(depends-on "smart-window")
 
 (depends-on "s")
 (depends-on "smartparens")
@@ -66,7 +65,6 @@
 (depends-on "bookmark+")
 (depends-on "python-mode")
 (depends-on "multiple-cursors")
-(depends-on "occur-default-current-word")
 
 (depends-on "dos")
 (depends-on "multi-web-mode")
