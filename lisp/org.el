@@ -37,30 +37,6 @@
 (global-set-key (kbd "<f7>") 'bh/set-truncate-lines)
 (global-set-key (kbd "<f8>") 'org-cycle-agenda-files)
 
-;; (global-set-key (kbd "<f9> <f9>") 'bh/show-org-agenda)
-;; (global-set-key (kbd "<f9> b") 'bbdb)
-;; (global-set-key (kbd "<f9> c") 'calendar)
-;; (global-set-key (kbd "<f9> f") 'boxquote-insert-file)
-;; (global-set-key (kbd "<f9> g") 'gnus)
-;; (global-set-key (kbd "<f9> h") 'bh/hide-other)
-;; (global-set-key (kbd "<f9> n") 'bh/toggle-next-task-display)
-;; (global-set-key (kbd "<f9> w") 'widen)
-
-;; (global-set-key (kbd "<f9> I") 'bh/punch-in)
-;; (global-set-key (kbd "<f9> O") 'bh/punch-out)
-
-;; (global-set-key (kbd "<f9> o") 'bh/make-org-scratch)
-
-;; (global-set-key (kbd "<f9> r") 'boxquote-region)
-;; (global-set-key (kbd "<f9> s") 'bh/switch-to-scratch)
-
-;; (global-set-key (kbd "<f9> t") 'bh/insert-inactive-timestamp)
-;; (global-set-key (kbd "<f9> T") 'bh/toggle-insert-inactive-timestamp)
-
-;; (global-set-key (kbd "<f9> v") 'visible-mode)
-;; (global-set-key (kbd "<f9> l") 'org-toggle-link-display)
-;; (global-set-key (kbd "<f9> SPC") 'bh/clock-in-last-task)
-
 (global-set-key (kbd "C-<f9>") 'previous-buffer)
 (global-set-key (kbd "M-<f9>") 'org-toggle-inline-images)
 (global-set-key (kbd "C-x n r") 'narrow-to-region)
@@ -1689,7 +1665,7 @@ Late deadlines first, then scheduled, then non-late deadlines"
 
 (defvar bh/insert-inactive-timestamp t)
 
-(defun bh/toggle-insert-inactive-timestamp ()
+(defun hbzhou/toggle-insert-inactive-timestamp ()
   (interactive)
   (setq bh/insert-inactive-timestamp (not bh/insert-inactive-timestamp))
   (message "Heading timestamps are %s" (if bh/insert-inactive-timestamp "ON" "OFF")))
