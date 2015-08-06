@@ -253,3 +253,5 @@ by changing them to C:/*"
   (set-buffer (find-file (concat "/sudo::" file))))
 
 (set-default 'indicate-empty-lines t)
+
+(setq ag-highlight-search t)

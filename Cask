@@ -82,3 +82,6 @@
 
 (depends-on "async")
 
+(depends-on "ag")
+(depends-on "helm-ag")
+
