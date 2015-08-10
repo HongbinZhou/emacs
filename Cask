@@ -85,3 +85,11 @@
 (depends-on "ag")
 (depends-on "helm-ag")
 
+(depends-on "ahg")
+
+(depends-on "window-numbering")
+
+(depends-on "grep-o-matic")
+
+
+
