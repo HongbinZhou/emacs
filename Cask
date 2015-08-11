@@ -85,3 +85,5 @@
 (depends-on "ag")
 (depends-on "helm-ag")
 
+(depends-on "swiper")
+(depends-on "hydra")
