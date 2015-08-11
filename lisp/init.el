@@ -161,9 +161,6 @@
 
 (setq monky-process-type 'cmdserver)
 
-;;; ahg
-(require 'ahg)
-
 ;;; mercurial
 (require 'mercurial)
 
@@ -191,10 +188,6 @@ by changing them to C:/*"
 (setq filename (concat (match-string 1 filename) ":/"
 		       (match-string 2 filename)))))
 
-
-;;; emacs-grep-o-matic
-(add-to-list 'load-path "~/.emacs.d/plugins/emacs-grep-o-matic")
-(require 'grep-o-matic)
 
 ;;; open txt and tso log with utf-8 coding
 ;;; ref: http://emacswiki.org/emacs/ChangingEncodings

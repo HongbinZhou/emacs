@@ -2,7 +2,7 @@
 ;;; Tue May 27 15:14:02 2014
 ;;  link: http://haskell.github.io/haskell-mode/manual/latest/
 
-(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+(add-hook 'haskell-mode-hook 'haskell-indent-mode)
 
 ;;; https://github.com/haskell/haskell-mode/wiki/Haskell-Interactive-Mode-Tags
 (custom-set-variables '(haskell-tags-on-save t))
