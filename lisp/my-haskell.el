@@ -17,7 +17,7 @@
  '(haskell-process-auto-import-loaded-modules t)
  '(haskell-process-log t))
 
-(custom-set-variables '(haskell-process-type 'cabal-repl))
+(custom-set-variables '(haskell-process-type 'stack-ghci))
 
 
 (defun my-haskell-mode-hook ()
