@@ -43,9 +43,6 @@
 
 (setq outline-minor-mode-prefix [(control o)])
 
-
-(global-set-key (kbd "C-c z") 'shell)
-(global-set-key (kbd "C-z") 'eshell)
 (global-set-key (kbd "<f9>") 'rename-buffer)
 
 
@@ -82,7 +79,6 @@
 
 ;;; unbind Ctrl+z
 (global-unset-key (kbd "C-x C-z"))
-;; (global-unset-key (kbd "C-z"))
 
 (global-unset-key (kbd "<M-tab>"))
 

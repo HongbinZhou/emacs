@@ -26,3 +26,31 @@
   (let ((buffer (generate-new-buffer-name "*shell*"))) ad-do-it))
 
 (ad-activate 'shell)
+
+
+;;; ref: https://github.com/howardabrams/dot-files/blob/master/emacs-eshell.org
+(defun eshell/x ()
+  "Closes the EShell session and gets rid of the EShell window."
+  (kill-buffer)
+  (delete-window))
+
+(defun eshell-here ()
+  "Opens up a new shell in the directory associated with the
+current buffer's file. The eshell is renamed to match that
+directory to make multiple eshell windows easier."
+  (interactive)
+  (let* ((parent (if (buffer-file-name)
+                     (file-name-directory (buffer-file-name))
+                   default-directory))
+         (height (/ (window-total-height) 3))
+         (name   (car (last (split-string parent "/" t)))))
+    (split-window-vertically (- height))
+    (other-window 1)
+    (eshell "new")
+    (rename-buffer (concat "*eshell: " name "*"))
+
+    (insert (concat "ls"))
+    (eshell-send-input)))
+
+(global-set-key (kbd "C-z") 'eshell-here)
+(global-set-key (kbd "C-c z") 'shell)

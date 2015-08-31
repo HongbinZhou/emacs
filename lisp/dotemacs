@@ -91,6 +91,9 @@
      ("\\.mm\\'" . default)
      ("\\.x?html?\\'" . default)
      ("\\.pdf\\'" . "xpdf"))))
+ '(package-selected-packages
+   (quote
+    (yaml-mode yasnippet window-numbering undo-tree swiper smartparens smart-window smart-tabs-mode smart-mode-line slime session rust-mode redshank python-mode powerline popwin php-mode parenface paredit org-plus-contrib multiple-cursors multi-web-mode monky magit lua-mode log4j-mode list-utils jade-mode isend-mode inf-ruby hydra htmlize highlight-indentation helm-swoop helm-projectile helm-gtags helm-ag helm-ack go-mode ghc ggtags fold-dwim-org flycheck f expand-region easy-kill dos cygwin-mount bookmark+ avy autopair auto-indent-mode auto-complete ahg aggressive-indent ag ace-jump-mode)))
  '(save-visited-files-location "~/.emacs-visited-files")
  '(send-mail-function (quote smtpmail-send-it))
  '(session-use-package t nil (session))
