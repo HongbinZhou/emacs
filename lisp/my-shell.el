@@ -27,28 +27,7 @@
 
 (ad-activate 'shell)
 
-;; ;;; ref: https://github.com/howardabrams/dot-files/blob/master/emacs-eshell.org
-;; (defun eshell/x ()
-;;   "Closes the EShell session and gets rid of the EShell window."
-;;   (kill-buffer)
-;;   (delete-window))
-
-;;; ref: https://www.reddit.com/r/emacs/comments/1zkj2d/advanced_usage_of_eshell/
-(defun delete-single-window (&optional window)
-  "Remove WINDOW from the display.  Default is `selected-window'.
-If WINDOW is the only one in its frame, then `delete-frame' too."
-  (interactive)
-  (save-current-buffer
-    (setq window (or window (selected-window)))
-    (select-window window)
-    (kill-buffer)
-    (if (not (one-window-p t))
-      (delete-window (selected-window)))
-    ))
-
-(defun eshell/x (&rest args)
-  (delete-single-window))
-
+;;; ref: https://github.com/howardabrams/dot-files/blob/master/emacs-eshell.org
 (defun eshell-here ()
   "Opens up a new shell in the directory associated with the
 current buffer's file. The eshell is renamed to match that
