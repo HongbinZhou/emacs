@@ -42,9 +42,9 @@ If WINDOW is the only one in its frame, then `delete-frame' too."
     (setq window (or window (selected-window)))
     (select-window window)
     (kill-buffer)
-    (if (one-window-p t)
-        (delete-frame)
-        (delete-window (selected-window)))))
+    (if (not (one-window-p t))
+      (delete-window (selected-window)))
+    ))
 
 (defun eshell/x (&rest args)
   (delete-single-window))
