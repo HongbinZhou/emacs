@@ -27,12 +27,27 @@
 
 (ad-activate 'shell)
 
+;; ;;; ref: https://github.com/howardabrams/dot-files/blob/master/emacs-eshell.org
+;; (defun eshell/x ()
+;;   "Closes the EShell session and gets rid of the EShell window."
+;;   (kill-buffer)
+;;   (delete-window))
 
-;;; ref: https://github.com/howardabrams/dot-files/blob/master/emacs-eshell.org
-(defun eshell/x ()
-  "Closes the EShell session and gets rid of the EShell window."
-  (kill-buffer)
-  (delete-window))
+;;; ref: https://www.reddit.com/r/emacs/comments/1zkj2d/advanced_usage_of_eshell/
+(defun delete-single-window (&optional window)
+  "Remove WINDOW from the display.  Default is `selected-window'.
+If WINDOW is the only one in its frame, then `delete-frame' too."
+  (interactive)
+  (save-current-buffer
+    (setq window (or window (selected-window)))
+    (select-window window)
+    (kill-buffer)
+    (if (one-window-p t)
+        (delete-frame)
+        (delete-window (selected-window)))))
+
+(defun eshell/x (&rest args)
+  (delete-single-window))
 
 (defun eshell-here ()
   "Opens up a new shell in the directory associated with the
@@ -54,3 +69,9 @@ directory to make multiple eshell windows easier."
 
 (global-set-key (kbd "C-z") 'eshell-here)
 (global-set-key (kbd "C-c z") 'shell)
+
+;; ref: https://github.com/bbatsov/emacs-dev-kit/blob/master/eshell-config.el
+;; ref: https://github.com/tuhdo/emacs-c-ide-demo/blob/master/custom/setup-helm.el
+(add-hook 'eshell-mode-hook
+          #'(lambda ()
+              (define-key eshell-mode-map (kbd "M-r")  'helm-eshell-history)))
