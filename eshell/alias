@@ -1,8 +1,9 @@
-alias hdiff hg diff $*
-alias ll ls -al
-alias hlog hg log . -r 3
-alias hst hg status .
-alias hbr hg branch
-alias hbrs hg branches
+; run eshell-read-aliases-list to source this file
+alias 3c gawk '{print $(NF-2), $(NF-1), $NF}' $1
 alias hman hg help $1
-alias hembh hg update REQ_46059_embh
+alias hbrs hg branches
+alias hbr hg branch
+alias hst hg status .
+alias hlog hg log . -r 3
+alias ll ls -al
+alias hdiff hg diff $*
