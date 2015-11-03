@@ -771,10 +771,10 @@ Skip project and sub-project tasks, habits, and loose non-project tasks."
 (setq org-alphabetical-lists t)
 
 ;; Explicitly load required exporters
-(require 'ox-html)
-(require 'ox-latex)
-(require 'ox-ascii)
-(require 'ox-beamer)
+;; (require 'ox-html)
+;; (require 'ox-latex)
+;; (require 'ox-ascii)
+;; (require 'ox-beamer)
 
 (setq org-ditaa-jar-path "/usr/share/java/ditaa/ditaa-0_9.jar")
 ;; (setq org-plantuml-jar-path "~/java/plantuml.jar")
@@ -1922,10 +1922,10 @@ of the next."
 (add-hook 'org-mode-hook
           (lambda () (setq truncate-lines nil)))
 
-;;; export to markdown
-;;; ref: http://stackoverflow.com/questions/22988092/emacs-org-mode-export-markdown
-(eval-after-load "org"
-    '(require 'ox-md nil t))
+;; ;;; export to markdown
+;; ;;; ref: http://stackoverflow.com/questions/22988092/emacs-org-mode-export-markdown
+;; (eval-after-load "org"
+;;     '(require 'ox-md nil t))
 
 ;;; enable auto-fill-mode
 ;;; remember to use M-q !
