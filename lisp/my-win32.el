@@ -9,7 +9,7 @@
 (add-to-list 'exec-path "C:/Program Files (x86)/Aspell/bin/")
 (setq ispell-program-name "aspell")
 (setq ispell-personal-dictionary "C:/Program Files (x86)/Aspell/dict")
-(setq magit-git-executable "C:/Program Files (x86)/Git/cmd/git.exe")
+(setq magit-git-executable "C:/Program Files (x86)/Git/bin/git.exe")
 
 (global-set-key (kbd "C-x C-c") 'my-done)
 (defun my-done ()
