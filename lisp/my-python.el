@@ -1,6 +1,5 @@
 
-;;; the following require is must, otherwise,
-;; python-mode will be the default python.el.
+(elpy-enable)
 
 (defun python-add-breakpoint ()
    "Add a break point"

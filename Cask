@@ -63,7 +63,7 @@
 (depends-on "undo-tree")
 
 (depends-on "bookmark+")
-(depends-on "python-mode")
+
 (depends-on "multiple-cursors")
 
 (depends-on "dos")
@@ -94,3 +94,5 @@
 (depends-on "window-numbering")
 
 (depends-on "grep-o-matic")
+
+(depends-on "elpy")

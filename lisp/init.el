@@ -15,6 +15,7 @@
                          ("melpa" . "http://melpa.org/packages/")
 			 ("elpa" . "http://tromey.com/elpa/")
 			 ("org" . "http://orgmode.org/elpa/")
+			 ("elpy" . "http://jorgenschaefer.github.io/packages/")
 			 ))
 
 ;;; winner-mode
