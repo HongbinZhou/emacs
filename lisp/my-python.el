@@ -2,8 +2,6 @@
 ;;; the following require is must, otherwise,
 ;; python-mode will be the default python.el.
 
-(require 'python-mode)
-
 (defun python-add-breakpoint ()
    "Add a break point"
    (interactive)
@@ -41,5 +39,4 @@
 
 ;;; http://stackoverflow.com/questions/1587972/how-to-display-indentation-guides-in-emacs
 (require 'highlight-indentation)
-(add-hook 'python-mode-hook 'highlight-indentation-mode)
 (add-hook 'js2-mode-hook 'highlight-indentation-mode)

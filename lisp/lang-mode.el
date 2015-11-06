@@ -4,11 +4,6 @@
 (autoload 'lua-mode "lua-mode" "Lua editing mode." t)
 
 
-;;;python-mode
-(require 'python)
-(autoload 'python-mode "python-mode.el" "Python mode." t)
-(setq auto-mode-alist (append '(("/*.\.py$" . python-mode)) auto-mode-alist))
-
 
 ;;; php mode
 (autoload 'php-mode "php-mode.el" "Php mode." t)
