@@ -1,5 +1,19 @@
 
 (elpy-enable)
+(defun my-python-mode-hook ()
+  (line-number-mode t)
+  (hs-minor-mode t)
+  (fold-dwim-org/minor-mode t)
+  ;; handle trailing space
+  (setq-default show-trailing-whitespace t)
+  (setq-default require-final-newline t)
+  (setq-default delete-trailing-lines nil)
+  (add-hook 'local-write-file-hooks 'delete-trailing-whitespace)
+  )
+
+(add-hook 'elpy-mode-hook
+          'my-python-mode-hook)
+
 
 (defun python-add-breakpoint ()
    "Add a break point"
@@ -8,7 +22,7 @@
    (insert "import pdb; pdb.set_trace()")
    (highlight-lines-matching-regexp "^[ ]*import pdb; pdb.set_trace()"))
 
-(define-key python-mode-map (kbd "C-c C-b") 'python-add-breakpoint)
+(define-key elpy-mode-map (kbd "C-c C-b") 'python-add-breakpoint)
 
 (defun python-interactive ()
   "Enter the interactive Python environment"
