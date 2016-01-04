@@ -97,3 +97,4 @@
 (depends-on "grep-o-matic")
 
 (depends-on "elpy")
+(depends-on "perl6-mode")
