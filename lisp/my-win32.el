@@ -1,5 +1,6 @@
 (setenv "PATH"
 	(concat
+	 "C:/Python27" ";"
 	 "C:/cygwin64/bin" ";"
 	 "C:/cygwin64/usr/sbin" ";"
 	 (getenv "PATH")
