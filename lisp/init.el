@@ -304,3 +304,13 @@ _s-f_: file            _a_: ag                _i_: Ibuffer           _c_: cache 
   ("q"   nil "cancel" :color blue))
 
 (global-set-key (kbd "M-p") #'hydra-projectile/body)
+
+;; active Babel languages
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+  '( (perl . t)
+     (ruby . t)
+     (sh . t)
+     (python . t)
+     (emacs-lisp . t)
+     ))

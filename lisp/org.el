@@ -25,8 +25,6 @@
 		  (list "~/Dropbox/doc/org/todo.org") nil)
 	      (if (file-exists-p "~/Dropbox/doc/org/worklog.org" )
 		  (list "~/Dropbox/doc/org/worklog.org") nil)
-	      (if (file-exists-p "~/Dropbox/doc/org/studylog.org" )
-		  (list "~/Dropbox/doc/org/studylog.org") nil)
 	      (if (file-exists-p "~/Dropbox/doc/org/notes.org" )
 		  (list "~/Dropbox/doc/org/notes.org") nil)))
 
