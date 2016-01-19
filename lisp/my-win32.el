@@ -2,6 +2,8 @@
 	(concat
 	 "C:/cygwin64/bin" ";"
 	 "C:/cygwin64/usr/sbin" ";"
+	 "C:/Program Files/Git/bin" ";"
+	 "C:/Program Files (x86)/Git/bin" ";"
 	 (getenv "PATH")
 	 ))
 
@@ -9,7 +11,6 @@
 (add-to-list 'exec-path "C:/Program Files (x86)/Aspell/bin/")
 (setq ispell-program-name "aspell")
 (setq ispell-personal-dictionary "C:/Program Files (x86)/Aspell/dict")
-(setq magit-git-executable "C:/Program Files (x86)/Git/bin/git.exe")
 
 (global-set-key (kbd "C-x C-c") 'my-done)
 (defun my-done ()
