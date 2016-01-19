@@ -1,9 +1,31 @@
-; run eshell-read-aliases-list to source this file
+alias 0ps setq a lili917_with_strongphrase_wav/test$1.wav; pw $a; setq b lili917_without_strongphrase_wav/test$1.wav; pw $b
+alias ppro pp tprompt$1_1_hybrid_poly.pcm
+alias tune_up_p python ../tune.py tprompt$1_1.lab -u 1 -i 0
+alias tune_gen_p python ../tune.py tprompt$1_1.lab -u 0
+alias pn pp tnavi$1_1_hybrid_poly.pcm
+alias tune_gen python ../tune.py tnavi$1_1.lab -u 0
+alias tune_update python ../tune.py tnavi$1_1.lab -u 1 -i 0
+alias praw pp ../../../../voices/lili917_rawdata/$1.pcm
+alias pu1 pp pcm_untune/tprompt$1_1_hybrid_poly.pcm
+alias pt1 pp pcm_tune/tprompt$1_1_hybrid_poly.pcm
+alias pt pp pcm_tune/tnavi$1_1_hybrid_poly.pcm
+alias pu pp pcm_untune/tnavi$1_1_hybrid_poly.pcm
+alias pp sox -t raw -r 22520 -b 16 -c 1 -e signed-integer $* -t waveaudio 0
 alias 3c gawk '{print $(NF-2), $(NF-1), $NF}' $1
 alias hman hg help $1
 alias hbrs hg branches
 alias hbr hg branch
 alias hst hg status .
 alias hlog hg log . -r 3
-alias ll ls -al
 alias hdiff hg diff $*
+alias la ls -a
+alias expect alias send_user 
+alias ll ls -l
+alias 3l ls
+alias pw sox $1 -t waveaudio
+alias tmpp sox lili715_wav/tgen$1.wav lili917_wav/tgen$1_1_hybrid_poly.wav -t waveaudio
+alias tmpn sox lili715_wav/tnews$1.wav lili917_wav/tnews$1_1_hybrid_poly.wav -t waveaudio
+alias 0g sox lili715/tgen$1.wav lili917/tgen$1_1_hybrid_poly.wav -t waveaudio
+alias 0n pp lili917_pcm/pcm_untune/tnavi$1\*.pcm; pp bet3_pcm/tnavi$1.pcm
+alias 0up pp ../lili917_pcm/pcm_tune_without_psola/tprompt$1_1_hybrid_poly.pcm
+alias 0p pp tprompt$1_1_hybrid_poly.pcm

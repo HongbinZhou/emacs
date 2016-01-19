@@ -58,6 +58,7 @@
 (depends-on "s")
 (depends-on "smartparens")
 (depends-on "yasnippet")
+(depends-on "helm-c-yasnippet")
 
 (depends-on "session")
 (depends-on "undo-tree")
@@ -96,3 +97,4 @@
 (depends-on "grep-o-matic")
 
 (depends-on "elpy")
+(depends-on "perl6-mode")
