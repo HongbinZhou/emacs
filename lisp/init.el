@@ -304,3 +304,5 @@ _s-f_: file            _a_: ag                _i_: Ibuffer           _c_: cache 
   ("q"   nil "cancel" :color blue))
 
 (global-set-key (kbd "M-p") #'hydra-projectile/body)
+
+(setq buffer-file-coding-system 'utf-8-unix)
